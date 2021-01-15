@@ -1,0 +1,21 @@
+.hero__bottom{
+    text-align: center
+}
+
+.hero__bottom-btn{
+    background: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+.hero__bottom-btn:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: svg-load('down.svg', fill=$dark, width=100%, height=100%);
+    right: -20px;
+    top: 6px
+}

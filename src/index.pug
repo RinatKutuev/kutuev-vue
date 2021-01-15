@@ -1,15 +1,91 @@
-include ./mixins.pug
+extends ./main.layout.pug
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+block content
+    .main-section
+        section.hero
+            .container.hero__container
+                header.header
+                    .logo
+                        a(href="#").logo-link PK
+                    nav.navigation
+                        - var navItems = ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
+                        ul.navigation__list
+                            each item in navItems
+                                li.navigation__list-item
+                                    a(href="#").navigation__list-link #{item}
+
+                    - var socials = ['insta', 'github', 'vk', 'envelope']
+                    ul.socials
+                        each item in socials
+                            li.socials__item
+                                a(href="#").socials__link
+                                    +icon(item, 'social-icon')
+
+                .author
+                    .author__title Личный сайт #[br] веб разработчика
+                    .author__name Ринат Кутуев
+
+                .hero__bottom
+                    button.hero__bottom-btn Скролл
+        section.about
+            .container.about__container
+                .about-user
+                    .user
+                        .user__avatar
+                            .user__avatar-wrapp
+                                +image("content/user.jpg", ".user__avatar-img")
+
+                        -
+                            var userData = [
+                                ['Проживаю:', 'Бишкек'],
+                                ['Возраст:', '27'],
+                                ['Родился:', '19 августа 1993'],
+                            ];
+                        table.user__table
+                            each item in userData
+                                tr.user__table-row
+                                    td.user__table-title #{item[0]}
+                                    td.user__table-content #{item[1]}
+                .about__text
+                    .about__text-desc Привет, меня зовут
+                    .about__text-title Ринат
+                    p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    .about__text-quote
+                        | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    .middle-section
+        section.values
+            .container.values__container
+                .values__inner
+                    .values__title
+                        .values__title-text Чем я могу быть полезен вам
+                        .values__content
+                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                    .values__widget
+                        -
+                            var skillsCat = [
+                                ["Front-end", ['HTML5', 'CSS3', 'Javascript', 'Vue.js']],
+                                ["Workflow", ['GIT', 'Terminal', 'Gulp', 'Webpack']]
+                            ];
+
+                        ul.skills
+                            each category in skillsCat
+                                li.skills__item
+                                    .skills__row
+                                        .skills__row-title #{category[0]}
+                                        ul.skills__row-list
+                                            each skill in category[1]
+                                                li.skills__row-item
+                                                    .skill
+                                                        svg(viewBox="0 0 100 100").skill__circle-shape
+                                                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
+                                                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--layer--above
+                                                            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="100%")
+                                                                stop(offset="0%" stop-color="#4A00ED")
+                                                                stop(offset="100%" stop-color="#7C00EA")
+                                                        .skill__title #{skill}
+
+
+
+
+
+

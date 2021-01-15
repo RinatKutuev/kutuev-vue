@@ -1,0 +1,54 @@
+.skills__row-title{
+    font-size: 24px;
+    font-weight: 700;
+    color: $dark;
+    margin-bottom: 25px
+}
+
+.skills__row-list{
+    display: flex;
+}
+
+.skills__row-item{
+    width: 24%;
+}
+
+.skill__circle{
+    fill: transparent;
+
+    &--layer--under{
+        stroke: rgba($dark, .1);
+        stroke-width: 5px;
+    }
+
+    &--layer--above{
+        stroke-width: 10px;
+        stroke-dasharray: 251;
+        stroke-dashoffset: 118;
+    }
+}
+
+.skill{
+    position: relative;
+    max-width: 160px;
+}
+
+.skill__title{
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba($dark, .5)
+    
+}
+
+.skills__row{
+    margin-bottom: 38px
+}
+
+.values__widget{
+    padding-left: 127px
+}
