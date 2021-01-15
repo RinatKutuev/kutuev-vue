@@ -53,6 +53,11 @@ block content
                     .about__text-quote
                         | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
     .middle-section
+        .triangles.middle-section__triangles-top
+            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--left
+                polygon(points="0,0 0,100 1000,100")
+            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--right
+                 polygon(points="0,100 1000,0 1000,100")
         section.values
             .container.values__container
                 .values__inner
@@ -83,9 +88,49 @@ block content
                                                                 stop(offset="0%" stop-color="#4A00ED")
                                                                 stop(offset="100%" stop-color="#7C00EA")
                                                         .skill__title #{skill}
+        
+        .triangles.middle-section__triangles-bottom
+            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--left
+                polygon(points="0,0 1000,0 1000,100")
+            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--right
+                 polygon(points="0,0 1000,0 0,100")
 
+        section.works
+            .container
+                .block-title Мои работы
+                .works__content
+                    .works-preview
+                        .works-preview__slider(data-slide="2")
+                            +image('content/slide1.jpg', 'works-preview__img')
+                            ul.thumbs
+                                - for (var i = 3; i > 0; i--)
+                                    li.thumbs__item
+                                        a(href="#").thumbs__link
+                                            +image('content/slide1.jpg', 'thumbs__img')
+                            .works-preview__btns
+                                .square-btns
+                                    button(type="button").square-btns__item.square-btns__item--prev
+                                    button(type="button").square-btns__item.square-btns__item--next
+                                    
+                    
+                    .works-preview__info
+                        - var tags = ["HTML", "CSS", "Javascript"]
+                        ul.tags
+                            each item in tags
+                                li.tags__item
+                                    .tag #{item}
 
+                        .works-preview__title Сайт школы образования
+                        .works-preview__text
+                            p
+                                | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .works-preview__link
+                            a(href="#").iconed-link Посмотреть сайт
 
+                            
+    
+
+    
 
 
 
