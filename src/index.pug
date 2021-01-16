@@ -54,9 +54,9 @@ block content
                         | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
     .middle-section
         .triangles.middle-section__triangles-top
-            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--left
+            svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--left
                 polygon(points="0,0 0,100 1000,100")
-            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--right
+            svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--right
                  polygon(points="0,100 1000,0 1000,100")
         section.values
             .container.values__container
@@ -90,9 +90,9 @@ block content
                                                         .skill__title #{skill}
         
         .triangles.middle-section__triangles-bottom
-            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--left
+            svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--left
                 polygon(points="0,0 1000,0 1000,100")
-            svg(viewbox="0 0 1000 100" preservAspectratio="none").triangles__shape.triangles__shape--position--right
+            svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--right
                  polygon(points="0,0 1000,0 0,100")
 
         section.works
@@ -127,6 +127,41 @@ block content
                         .works-preview__link
                             a(href="#").iconed-link Посмотреть сайт
 
+    section.section-reviews
+        .container
+            .slider
+                .slider__header
+                    .block-title Что обо мне говорят
+                    .slider__btns
+                        button(type="button").slider__btn.slider__btn--pointer-prev
+                        button(type="button").slider__btn.slider__btn--pointer-next
+                ul.slider__content
+                    li.slider__item
+                        .quote
+                            .quote__text
+                                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .quote__author
+                                .user-display
+                                    .user-display__avatar
+                                        .user-display__avatar-style
+                                            +image('content/user1.jpg', 'user-display__pic')
+                                    .user-display__desc
+                                        .user-display__name Ковальчук Дмитрий
+                                        .user-display__position Основатель Loftschool
+                    li.slider__item
+                        .quote
+                            .quote__text
+                                p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                            .quote__author
+                                .user-display
+                                    .user-display__avatar
+                                        .user-display__avatar-style
+                                            +image('content/user2.jpg', 'user-display__pic')
+                                    .user-display__desc
+                                        .user-display__name Владимир Сабанцев
+                                        .user-display__position Преподаватель
+
+                
                             
     
 

@@ -1,0 +1,111 @@
+.slider__btns{
+    display: flex;
+}
+
+.slider__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 53px;
+    height: 53px;
+    border: 2px solid $dark;
+    border-radius: 50%;
+    margin-right: 28px;
+
+    &:last-child{
+        margin-right: 0
+    }
+
+    &--pointer-prev{
+        &:before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 22px;
+            background: svg-load('arrow-down.svg', fill=$dark, width=16px, height=22px) no-repeat center;
+            transform: rotate(180deg)
+        }
+    }
+
+    &--pointer-next{
+        &:before{
+            content: "";
+            display: block;
+            width: 16px;
+            height: 22px;
+            background: svg-load('arrow-down.svg', fill=$dark, width=16px, height=22px) no-repeat center;
+        }
+    }
+}
+
+.slider__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    justify-content: space-between;
+    max-width: 640px;
+
+    .block-title{
+        margin-bottom: 0;
+    }
+}
+
+
+.slider__content{
+    display: flex;
+    justify-content: space-between;
+    max-width: 985px;
+}
+
+.quote{
+    padding: 0 50px 0 100px
+}
+
+.quote__text{
+    position: relative;
+    color: rgba($dark, .6);
+    font-weight: 600;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    max-width: 330px;
+    min-height: 120px;
+
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 77px;
+        height: 58px;
+        left: -100px;
+
+        background: svg-load('quote.svg', fill=#DDE3EC, width=77px, height=58px)
+    }
+}
+
+.user-display{
+    display: flex;
+    align-items: center;
+}
+
+.user-display__avatar{
+    margin-right: 30px;
+}
+
+.user-display__avatar-style{
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user-display__name{
+    font-weight: 700;
+    font-size: 18px;
+    color: $dark;
+    margin-bottom: 10px;
+}
+
+.user-display__position{
+    font-weight: 600;
+    color: rgba($dark, .5)
+}
