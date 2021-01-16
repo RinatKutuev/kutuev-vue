@@ -7,15 +7,26 @@
     font-size: 18px;
     font-weight: 600;
     position: relative;
+    outline: none;
 }
 
-.hero__bottom-btn:before{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: svg-load('down.svg', fill=$dark, width=100%, height=100%);
-    right: -20px;
-    top: 6px
+.hero__bottom-btn{
+
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: svg-load('down.svg', fill=$dark, width=100%, height=100%);
+        right: -20px;
+        top: 6px;
+        transition: all ease .3s
+    }
+
+    &:hover{
+        &:before{
+            transform: translate(0,5px)
+        }
+    }
 }

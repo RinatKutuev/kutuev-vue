@@ -1,6 +1,7 @@
 .footer__socials-icon{
     width: 21px;
-    fill: rgba(#fff, .3)
+    fill: rgba(#fff, .3);
+    transition: all ease .3s;
 }
 
 .footer__socials-list{
@@ -15,5 +16,14 @@
     justify-content: center;
     border-radius: 50%;
     height: 50px;
-    border: 1px solid rgba(#fff, .3)
+    border: 1px solid rgba(#fff, .3);
+    transition: all ease .3s;
+
+    &:hover{
+        border: 1px solid rgba(#fff, 1);
+
+        .footer__socials-icon{
+            fill: rgba(#fff, 1)
+        }
+    }
 }

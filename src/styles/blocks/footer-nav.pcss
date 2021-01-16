@@ -11,4 +11,24 @@
 .footer__navigation-list__link{
     color: #fff;
     text-decoration: none;
+    position: relative;
+
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #fff;
+        bottom: -2px;
+        transition: all ease .3s;
+        transform: translate(0,10px);
+        opacity: 0;
+    }
+
+    &:hover{
+        &:before{
+            transform: translate(0,0);
+            opacity: 1;
+        }
+    }
 }

@@ -36,4 +36,16 @@
         height: 22px;
         background: svg-load('link.svg', fill=#586ED3, width=22px, height=22px)
     }
+
+    &:hover{
+        color: $dark;
+
+        &:before{
+            background: svg-load('link.svg', fill=$dark, width=22px, height=22px)
+        }
+    }
+
+    &:active{
+        opacity: .7
+    }
 }

@@ -53,6 +53,10 @@
         z-index: 2;
     }
     
+    &:hover{
+        border-color: #DC9322;
+        z-index: 2;
+    }
 }
 
 .works-preview__btns{
@@ -78,9 +82,22 @@
             &:before{
                 content: "";
                 display: block;
-                width: 11px;
-                height: 18px;
-                background: svg-load('slider-arrow.svg', fill=#717883, width=11px, height=18px)
+                width: 15px;
+                height: 22px;
+                background: svg-load('slider-arrow.svg', fill=#717883, width=15px, height=22px);
+            }
+
+            &:hover{
+                &:before{
+                    background: svg-load('slider-arrow.svg', fill=#fff, width=15px, height=22px);
+                }
+            }
+
+            &:active{
+                &:before{
+                    transform: translate(0,2px);
+                }
+                
             }
         }
 
@@ -88,10 +105,23 @@
             &:before{
                 content: "";
                 display: block;
-                width: 11px;
-                height: 18px;
+                width: 15px;
+                height: 22px;
                 transform: rotate(180deg);
-                background: svg-load('slider-arrow.svg', fill=#717883, width=11px, height=18px)
+                background: svg-load('slider-arrow.svg', fill=#717883, width=15px, height=22px);
+            }
+
+            &:hover{
+                &:before{
+                    background: svg-load('slider-arrow.svg', fill=#fff, width=15px, height=22px);
+                }
+            }
+
+            &:active{
+                &:before{
+                    transform: rotate(180deg) translate(0,2px);
+                }
+                
             }
         }
     }
