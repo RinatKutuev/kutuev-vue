@@ -4,6 +4,7 @@ node_modules
 .idea
 *.log
 *.lock
+dist
 out
 coverage
 .eslintcache
