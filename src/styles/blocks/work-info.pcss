@@ -1,6 +1,24 @@
 .works-preview__info{
     max-width: 365px;
-    flex: 1
+    flex: 1;
+
+    @include desktop{
+        max-width: 350px;
+        padding-left: 15px;
+    }
+
+    @include tablets{
+        padding: 0;
+        max-width: 425px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    @include phones{
+        padding: 0 20px;
+        max-width: 100%;
+        text-align: left
+    }
 }
 
 .works-preview__title{
@@ -8,6 +26,10 @@
     font-weight: 700;
     color: $dark;
     margin-bottom: 35px;
+
+    @include tablets{
+        font-size: 30px;
+    }
 }
 
 .works-preview__text{
@@ -15,7 +37,11 @@
     font-size: 16px;
     color: rgba($dark, .8);
     margin-bottom: 45px;
-    line-height: 2
+    line-height: 2;
+
+    @include tablets{
+        font-size: 14px;
+    }
 }
 
 .iconed-link{
@@ -47,5 +73,9 @@
 
     &:active{
         opacity: .7
+    }
+
+    @include tablets{
+        font-size: 14px;
     }
 }

@@ -1,11 +1,24 @@
 .navigation__list{
     display: flex;
+
+    @include tablets(){
+        flex-direction: column;
+        margin-bottom: 90px;
+    }
 }
 
 .navigation__list-item{
     margin-right: 60px;
     &:last-child{
         margin-right: 0;
+    }
+
+    @include tablets(){
+        margin: 0 0 23px 0;
+
+        &:last-child{
+            margin-bottom: 0
+        }
     }
 }
 
@@ -36,5 +49,16 @@
 
     &:active{
         opacity: .7
+    }
+
+    @include tablets(){
+        font-size: 18px;
+        font-weight: 600
+    }
+}
+
+.navigation {
+    @include tablets(){
+        display: none;
     }
 }

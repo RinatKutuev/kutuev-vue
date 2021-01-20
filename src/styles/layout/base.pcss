@@ -29,13 +29,19 @@ body {
 
 .container {
   margin: 0 auto;
-  // max-width: 1480px;
-  // width: 95%;
-  width: 1520px;
+  max-width: 1520px;
   padding: 0 15px;
 
   @include phones {
     width: 85%;
+  }
+
+  @include desktop {
+    max-width: 1130px;
+  }
+
+  @include tablets {
+    width: 95%
   }
 }
 

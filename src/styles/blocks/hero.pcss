@@ -3,5 +3,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 50px 15px 20px
+    padding: 50px 15px 20px;
+
+    @include tablets {
+        justify-content: flex-start
+    }
+
+    @include phones{
+        height: auto;
+    }
 }

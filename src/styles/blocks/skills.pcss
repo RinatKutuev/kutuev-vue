@@ -2,15 +2,33 @@
     font-size: 24px;
     font-weight: 700;
     color: $dark;
-    margin-bottom: 25px
+    margin-bottom: 25px;
+
+    @include tablets{
+        text-align: center;
+        font-size: 18px;
+        max-block-size: 10px
+    }
 }
 
 .skills__row-list{
     display: flex;
+
+    @include tablets{
+        justify-content: space-between
+    }
+
+    @include phones{
+        flex-wrap: wrap;
+    }
 }
 
 .skills__row-item{
     width: 24%;
+
+    @include phones{
+        width: 50%;
+    }
 }
 
 .skill__circle{
@@ -25,12 +43,24 @@
         stroke-width: 10px;
         stroke-dasharray: 251;
         stroke-dashoffset: 118;
+
+        @include tablets{
+            stroke-width: 6px;
+        }
     }
 }
 
 .skill{
     position: relative;
     max-width: 160px;
+
+    @include tablets{
+        max-width: 175px
+    }
+
+    @include phones{
+        margin: 0 auto;
+    }
 }
 
 .skill__title{
@@ -41,7 +71,11 @@
     transform: translate(-50%,-50%);
     font-size: 18px;
     font-weight: 700;
-    color: rgba($dark, .5)
+    color: rgba($dark, .5);
+
+    @include tablets{
+        font-size: 16px;
+    }
     
 }
 
@@ -50,5 +84,9 @@
 }
 
 .values__widget{
-    padding-left: 127px
+    padding-left: 127px;
+    
+    @include tablets{
+        padding-left: 0
+    }
 }

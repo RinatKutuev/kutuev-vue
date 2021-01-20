@@ -1,0 +1,61 @@
+.mobile-menu{
+    position: absolute;
+    background: #fff;
+    padding: 0 50px;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 330px;
+    transition: all ease .3s;
+    transform: translate(100%, 0);
+    display: none;
+
+    @include tablets(){
+        display: flex;
+    }
+
+    @include phones{
+        width: 100%;
+        align-items: flex-start
+    }
+    
+    .navigation{
+        display: block;
+        width: 100%;
+    }
+
+    .socials{
+        width: 100%;
+    }
+
+    .socials__list{
+        display: flex
+    }
+}
+
+.mobile-menu__close{
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 65px;
+    width: 25px;
+    height: 25px;
+    background: svg-load('cross.svg', fill=#464E62, width=20px, height=20px) no-repeat center
+}
+
+.menu-btn{
+    display: none;
+    margin-left: 85px;
+
+    @include tablets(){
+        display: block;
+        width: 33px;
+        height: 28px;
+        background: svg-load('menu.svg', fill=#464E62, width=30px, height=25px) no-repeat center
+    }
+}

@@ -1,19 +1,46 @@
 .footer{
     background: #252830;
     padding: 65px 0;
+
+    @include tablets{
+        padding: 60px 0
+    }
 }
 
 .footer__row{
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    
+    @include phones{
+        flex-direction: column
+    }
 }
 
 .footer__col{
-    width: 33.333%;
+    width: 33.3333%;
+    @include desktop {
+        width: 20%;
+    }
+
+    @include tablets{
+        width: 24%
+    }
+
+    @include phones{
+        width: 100%
+    }
 }
 
 .footer__info{
     display: flex;
+
+    @include desktop {
+        flex-direction: column
+    }
+
+    @include phones{
+        margin-bottom: 20px
+    }
 }
 
 .copyright{
@@ -21,6 +48,15 @@
     font-size: 46px;
     color: $dark;
     margin-right: 60px;
+    white-space: nowrap;
+
+    @include desktop {
+        margin-bottom: 10px
+    }
+
+    @include desktopHd {
+        margin-right: 30px
+    }
 }
 
 .site-author__text{
@@ -29,27 +65,84 @@
     font-size: 18px;
     text-transform: uppercase;
     line-height: 2;
-    margin-bottom: 6px
+    margin-bottom: 6px;
+    @include phones{
+        br{
+            display: none;
+        }
+    }
 }
 
 .site-author__desc{
-    line-height: 2
+    line-height: 2;
+
+    @include phones{
+        br{
+            display: none;
+        }
+    }
 }
 
 .footer__text{
     color: rgba(#fff, .45);
     margin-bottom: 40px;
-    line-height: 2
+    line-height: 2;
+    padding-right: 15px;
+    max-width: 335px;
+
+    @include tablets{
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
 }
 
 .footer__quote{
     color: rgba(#fff, .45);
     line-height: 2;
-    padding: 78px 10px 0 10px;
+    padding: 0 10px 0 10px;
+
+    @include tablets{
+        font-size: 14px;
+    }
+
+    @include phones{
+        padding: 0;
+    }
 }
 
 .footer__quote-author{
     font-style: italic;
     color:#fff;
     margin-top: 25px;
+}
+
+.footer__content{
+    width: 67%;
+
+    .footer__col{
+        width: 50%;
+
+        @include tablets{
+            width: 100%
+        }
+    }
+
+    @include desktop {
+        width: 77%
+    }
+
+    .footer__row{
+        @include tablets{
+            flex-direction: column
+        }
+    }
+
+    @include tablets{
+        width: 67%;
+    }
+
+    @include phones{
+        width: 100%
+    }
+    
 }

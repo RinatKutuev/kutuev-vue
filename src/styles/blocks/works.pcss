@@ -3,8 +3,30 @@
     font-weight: 700;
     color: $dark;
     margin-bottom: 80px;
+    
+    @include tablets{
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    @include phones{
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
 }
 
 .works{
-    padding-bottom: 130px
+    padding-bottom: 130px;
+    
+    @include tablets{
+        padding-bottom: 55px;
+    }
+
+    .container{
+        @include phones{
+            width: 100%;
+            padding: 0
+        }
+    }
 }

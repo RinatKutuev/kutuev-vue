@@ -2,10 +2,19 @@
     display: flex;
     justify-content: center;
     margin-bottom: 80px;
+
+    @include tablets {
+        margin-bottom: 15px
+    }
+
+    @include phones{
+        margin-bottom: 40px;
+    }
 }
 
 .user__avatar-wrapp{
     width: 200px;
+    min-width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden
@@ -18,6 +27,11 @@
     td{
         padding: 3px 0 12px;
     }
+
+    @include tablets {
+        font-size: 14px;
+    }
+
 }
 
 .user__table-title{

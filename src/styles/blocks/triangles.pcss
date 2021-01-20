@@ -7,16 +7,29 @@
             transform: rotate(180deg)
         }
     }
+
+    @include tablets{
+        height: 60px;
+    }
 }
 
 .triangles__shape{
     width: 50%;
     fill: #ffffff;
     height: 100px;
+
+    @include tablets{
+        height: 60px;
+        margin: -1px;
+    }
 }
 
 .middle-section__triangles-bottom{
     bottom: -97px;
     position: absolute;
-    width: 100%
+    width: 100%;
+
+    @include tablets{
+        bottom: -60px;
+    }
 }

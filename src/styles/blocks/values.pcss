@@ -2,7 +2,12 @@
     font-size: 30px;
     font-weight: 700;
     color: $dark;
-    margin-bottom: 50px
+    margin-bottom: 50px;
+
+    @include tablets{
+        max-width: 300px;
+        margin: 0 auto 30px
+    }
 }
 
 .values__content{
@@ -10,22 +15,63 @@
     font-weight: 600;
     line-height: 2;
     max-width: 600px;
+
+    @include tablets{
+        max-width: 475px;
+        font-size: 14px;
+        margin: 0 auto
+    }
 }
 
 .values__container{
     display: flex;
     padding: 145px 0;
     justify-content: flex-end;
+
+    @include tablets{
+        padding: 90px 0 0
+    }
 }
 
 .values__inner{
     width: 64%;
+
+    @include desktop{
+        width: 70%
+    }
+
+    @include tablets{
+        width: 100%
+    }
 }
 
 .values{
     background: url("~images/content/bag.png") no-repeat 9% 62%;
+
+    @include desktopHd{
+        background-position: -5% 62%
+    }
+
+    @include desktop{
+        background-position: -190px 62%
+    }
+
+    @include tablets{
+        padding-bottom: 380px;
+        background: url("~images/content/bag.png") no-repeat bottom center;
+        background-size: 340px;
+        margin-bottom: 60px
+    }
+
+    @include phones{
+        padding-bottom: 290px;
+    }
 }
 
 .values__title{
-    margin-bottom: 75px
+    margin-bottom: 75px;
+
+    @include tablets{
+        text-align: center;
+    }
 }

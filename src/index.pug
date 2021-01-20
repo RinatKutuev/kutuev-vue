@@ -1,6 +1,21 @@
 extends ./main.layout.pug
 
 block content
+    .mobile-menu
+        a.mobile-menu__close
+        nav.navigation
+            - var navItems = ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
+            ul.navigation__list
+                each item in navItems
+                    li.navigation__list-item
+                        a(href="#").navigation__list-link #{item}
+
+        - var socials = ['insta', 'github', 'vk', 'envelope']
+            ul.socials__list
+                each item in socials
+                    li.socials__item
+                        a(href="#").socials__link
+                            +icon(item, 'social-icon')
     .main-section
         section.hero
             .container.hero__container
@@ -15,11 +30,13 @@ block content
                                     a(href="#").navigation__list-link #{item}
 
                     - var socials = ['insta', 'github', 'vk', 'envelope']
-                    ul.socials
-                        each item in socials
-                            li.socials__item
-                                a(href="#").socials__link
-                                    +icon(item, 'social-icon')
+                    .socials
+                        ul.socials__list
+                            each item in socials
+                                li.socials__item
+                                    a(href="#").socials__link
+                                        +icon(item, 'social-icon')
+                        a.menu-btn
 
                 .author
                     .author__title Личный сайт #[br] веб разработчика
@@ -33,7 +50,7 @@ block content
                     .user
                         .user__avatar
                             .user__avatar-wrapp
-                                +image("content/user.jpg", ".user__avatar-img")
+                                +image("content/user.jpg", "user__avatar-img")
 
                         -
                             var userData = [
@@ -169,28 +186,28 @@ block content
                         .site-author
                             .site-author__text Ринат #[br]Кутуев
                             .site-author__desc Личный сайт #[br] веб-разработчика
-                .footer__col
+                .footer__content
                     .footer__navigation
                         - var navigation = ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
                         ul.footer__navigation-list
                             each item in navigation
                                 li.footer__navigation-list__item
                                     a(href="#").footer__navigation-list__link #{item}
-                    .footer__text Этот сайт я сделал в рамках обучения в #[br] Школе онлайн образования Loftschool
-                    .footer__socials
-                        - var socials = ['insta', 'github', 'vk', 'envelope']
-                        ul.footer__socials-list
-                            each item in socials
-                                li.footer__socials-item
-                                    a(href="#").footer__socials-link
-                                        +icon(item, 'footer__socials-icon')
-                .footer__col
-                    .footer__quote
-                        p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                        .footer__quote-author Martin Golding
+                    .footer__row
+                        .footer__col
+                            .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                            .footer__socials
+                                - var socials = ['insta', 'github', 'vk', 'envelope']
+                                ul.footer__socials-list
+                                    each item in socials
+                                        li.footer__socials-item
+                                            a(href="#").footer__socials-link
+                                                +icon(item, 'footer__socials-icon')
+                        .footer__col
+                            .footer__quote
+                                p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                                .footer__quote-author Martin Golding
 
-
-                                    
 
 
     

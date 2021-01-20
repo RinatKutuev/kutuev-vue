@@ -1,11 +1,32 @@
 .social-icon{
     width: 25px;
-    fill: $dark
+    fill: $dark;
+    display: block;
+}
+
+.socials__list{
+    display: flex;
+    align-items: center;
+
+    @include tablets(){
+        justify-content: space-between
+    }
+
+    @include phones{
+        display: none;
+    }
 }
 
 .socials{
     display: flex;
-    align-items: center;
+}
+
+.header{
+    .socials{
+        @include tablets(){
+            padding-left: 20%
+        } 
+    }
 }
 
 .socials__item{

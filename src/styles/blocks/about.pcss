@@ -1,13 +1,31 @@
 .about__container{
     display: flex;
-    padding: 150px 0 250px;
+    padding: 150px 15px 250px;
     justify-content: center;
     max-width: 1000px;
+
+    @include tablets {
+        padding: 20px 15px 110px
+    }
+
+    @include phones{
+        flex-direction: column
+    }
 }
 
 .about-user{
     width: 41%;
-    padding: 0 40px 0 40px
+    padding: 0 40px 0 40px;
+
+    @include desktop {
+        padding: 0 15px
+    }
+
+    @include phones{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+    }
 }
 
 .about__text{
@@ -17,6 +35,14 @@
 
     p{
         font-weight: 600
+    }
+
+    @include tablets {
+        font-size: 14px;
+    }
+
+    @include phones{
+        padding: 0;
     }
 }
 
@@ -30,6 +56,10 @@
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 27px;
+
+    @include desktop {
+        font-size: 30px;
+    }
 }
 
 .about__text-quote{
@@ -38,5 +68,10 @@
     font-weight: 400;
     font-size: 16px;
     margin-top: 80px;
-    line-height: 1.9
+    line-height: 1.9;
+
+    @include tablets {
+        font-size: 14px;
+        margin-top: 25px;
+    }
 }

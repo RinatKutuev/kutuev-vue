@@ -1,6 +1,14 @@
 .tags{
     display: flex;
     margin-bottom: 35px;
+    
+    @include tablets{
+        justify-content: center;
+    }
+
+    @include phones{
+        justify-content: flex-start
+    }
 }
 
 .tags__item{
@@ -13,7 +21,9 @@
     padding: 0 22px;
     border-radius: 24px;
     line-height: 48px;
-    font-weight: 15px;
+    font-size: 15px;
     color: rgba($dark, .8);
-    font-weight: 600
+    font-weight: 600;
+
+    
 }
