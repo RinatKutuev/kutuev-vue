@@ -1,0 +1,64 @@
+script(type="text/x-template")#preview-container
+    .works__content
+        display(
+            :currentWork="currentWork"
+            :works="works"
+            :currentIndex="currentIndex"
+            @slide="slide"  
+        )
+        info(
+            :currentWork="currentWork"
+        )        
+
+script(type="text/x-template")#preview-display
+    .works-preview
+        .works-preview__slider(:data-slide="currentIndex + 1")
+            img(:src="currentWork.photo").works-preview__img
+            .works-preview__thimbs
+                thumbs(
+                    :works="reversedWorks"
+                    :currentWork="currentWork"
+                )
+            .works-preview__btns
+                btns(
+                    @slide="$emit('slide', $event)"
+                )
+            
+script(type="text/x-template")#preview-thumbs
+    ul.thumbs
+        li.thumbs__item(
+            v-for="slide in works" :key="slide.id"
+            :class="{active: currentWork.id === slide.id}"
+            )
+            button.thumbs__link
+               img(:src="slide.photo").thumbs__img
+
+script(type="text/x-template")#preview-btns
+    .square-btns
+        button(
+            type="button"
+            @click="$emit('slide', 'prev')"
+        ).square-btns__item.square-btns__item--prev
+        button(
+            type="button"
+            @click="$emit('slide', 'next')"
+        ).square-btns__item.square-btns__item--next
+        
+
+script(type="text/x-template")#preview-info
+    .works-preview__info
+        .works-preview__tags
+            tags(
+                :tags="tagsArray"
+            )
+        .works-preview__title {{currentWork.title}}
+        .works-preview__text
+            p {{currentWork.desc}}
+                
+        .works-preview__link
+            a(:href="currentWork.link" target="_blank").iconed-link Посмотреть сайт
+
+script(type="text/x-template")#preview-tags
+     ul.tags
+        li(v-for="tag in tags").tags__item
+            .tag {{ tag }}

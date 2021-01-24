@@ -1,0 +1,21 @@
+script(type="text/x-template")#slider-container
+    .slider
+        .slider__header
+            .block-title Что обо мне говорят
+            .slider__btns(@click="checkArrow")
+                button(type="button" @click="prev()" ref="prevBtn" :disabled="prevDis").slider__btn.slider__btn--pointer-prev
+                button(type="button" @click="next()" ref="nextBtn" :disabled="nextDis").slider__btn.slider__btn--pointer-next
+        .slider__wrapp
+            flickity.slider__content(ref="flickity" :options="flickityOptions")
+                .slider__item(v-for="review in reviews")
+                    .quote
+                        .quote__text
+                            p {{review.text}}
+                        .quote__author
+                            .user-display
+                                .user-display__avatar
+                                    .user-display__avatar-style
+                                        img(:src="review.image").user-display__pic
+                                .user-display__desc
+                                    .user-display__name {{review.name}}
+                                    .user-display__position {{review.pos}}

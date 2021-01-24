@@ -27,7 +27,11 @@
 }
 
 .thumbs__link{
-    display: block
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
 }
 
 .works-preview__slider{
@@ -135,29 +139,7 @@
                 display: block;
                 width: 15px;
                 height: 22px;
-                background: svg-load('slider-arrow.svg', fill=#717883, width=15px, height=22px);
-            }
-
-            &:hover{
-                &:before{
-                    background: svg-load('slider-arrow.svg', fill=#fff, width=15px, height=22px);
-                }
-            }
-
-            &:active{
-                &:before{
-                    transform: translate(0,2px);
-                }
                 
-            }
-        }
-
-        &--prev{
-            &:before{
-                content: "";
-                display: block;
-                width: 15px;
-                height: 22px;
                 transform: rotate(180deg);
                 background: svg-load('slider-arrow.svg', fill=#717883, width=15px, height=22px);
             }
@@ -170,7 +152,30 @@
 
             &:active{
                 &:before{
-                    transform: rotate(180deg) translate(0,2px);
+                    transform: translate(0,-2px) rotate(180deg);
+                }
+                
+            }
+        }
+
+        &--prev{
+            &:before{
+                content: "";
+                display: block;
+                width: 15px;
+                height: 22px;
+                background: svg-load('slider-arrow.svg', fill=#717883, width=15px, height=22px);
+            }
+
+            &:hover{
+                &:before{
+                    background: svg-load('slider-arrow.svg', fill=#fff, width=15px, height=22px);
+                }
+            }
+
+            &:active{
+                &:before{
+                    transform: translate(0,2px);
                 }
                 
             }

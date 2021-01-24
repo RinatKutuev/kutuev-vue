@@ -4,11 +4,13 @@ block content
     .mobile-menu
         a.mobile-menu__close
         nav.navigation
+           
+            nav.navigation
             - var navItems = ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
             ul.navigation__list
                 each item in navItems
                     li.navigation__list-item
-                        a(href="#").navigation__list-link #{item}
+                        a(href="#").navigation__list-link #{item} 
 
         - var socials = ['insta', 'github', 'vk', 'envelope']
             ul.socials__list
@@ -44,7 +46,7 @@ block content
 
                 .hero__bottom
                     button.hero__bottom-btn Скролл
-        section.about
+        section(id="about").about
             .container.about__container
                 .about-user
                     .user
@@ -83,29 +85,7 @@ block content
                         .values__content
                             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                     .values__widget
-                        -
-                            var skillsCat = [
-                                ["Front-end", ['HTML5', 'CSS3', 'Javascript', 'Vue.js']],
-                                ["Workflow", ['GIT', 'Terminal', 'Gulp', 'Webpack']]
-                            ];
-
-                        ul.skills
-                            each category in skillsCat
-                                li.skills__item
-                                    .skills__row
-                                        .skills__row-title #{category[0]}
-                                        ul.skills__row-list
-                                            each skill in category[1]
-                                                li.skills__row-item
-                                                    .skill
-                                                        svg(viewBox="0 0 100 100").skill__circle-shape
-                                                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
-                                                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--layer--above
-                                                            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="100%")
-                                                                stop(offset="0%" stop-color="#4A00ED")
-                                                                stop(offset="100%" stop-color="#7C00EA")
-                                                        .skill__title #{skill}
-        
+                       #skills-component
         .triangles.middle-section__triangles-bottom
             svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--left
                 polygon(points="0,0 1000,0 1000,100")
@@ -115,68 +95,11 @@ block content
         section.works
             .container
                 .block-title Мои работы
-                .works__content
-                    .works-preview
-                        .works-preview__slider(data-slide="2")
-                            +image('content/slide1.jpg', 'works-preview__img')
-                            ul.thumbs
-                                - for (var i = 3; i > 0; i--)
-                                    li.thumbs__item
-                                        a(href="#").thumbs__link
-                                            +image('content/slide1.jpg', 'thumbs__img')
-                            .works-preview__btns
-                                .square-btns
-                                    button(type="button").square-btns__item.square-btns__item--prev
-                                    button(type="button").square-btns__item.square-btns__item--next
-                                    
-                    
-                    .works-preview__info
-                        - var tags = ["HTML", "CSS", "Javascript"]
-                        ul.tags
-                            each item in tags
-                                li.tags__item
-                                    .tag #{item}
-
-                        .works-preview__title Сайт школы образования
-                        .works-preview__text
-                            p
-                                | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        .works-preview__link
-                            a(href="#" target="_blank").iconed-link Посмотреть сайт
+                #preview-component
 
     section.section-reviews
         .container
-            .slider
-                .slider__header
-                    .block-title Что обо мне говорят
-                    .slider__btns
-                        button(type="button").slider__btn.slider__btn--pointer-prev
-                        button(type="button").slider__btn.slider__btn--pointer-next
-                ul.slider__content
-                    li.slider__item
-                        .quote
-                            .quote__text
-                                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                            .quote__author
-                                .user-display
-                                    .user-display__avatar
-                                        .user-display__avatar-style
-                                            +image('content/user1.jpg', 'user-display__pic')
-                                    .user-display__desc
-                                        .user-display__name Ковальчук Дмитрий
-                                        .user-display__position Основатель Loftschool
-                    li.slider__item
-                        .quote
-                            .quote__text
-                                p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                            .quote__author
-                                .user-display
-                                    .user-display__avatar
-                                        .user-display__avatar-style
-                                            +image('content/user2.jpg', 'user-display__pic')
-                                    .user-display__desc
-                                        .user-display__name Владимир Сабанцев
-                                        .user-display__position Преподаватель
+            #review-component
     footer.footer
         .container
             .footer__row
