@@ -1,0 +1,18 @@
+script(type="text/x-template")#mobile-menu
+    .mobile-menu__wrapp
+        a.menu-btn(@click="toggleMenu()")
+        .mobile-menu(:class="{ 'active' : isActiveMenu }")
+            a.mobile-menu__close(@click="toggleMenu()")
+            nav.navigation
+                - var navItems = ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
+                ul.navigation__list
+                    each item in navItems
+                        li.navigation__list-item
+                            a(href="#").navigation__list-link #{item} 
+
+            - var socials = ['insta', 'github', 'vk', 'envelope']
+                ul.socials__list
+                    each item in socials
+                        li.socials__item
+                            a(href="#").socials__link
+                                +icon(item, 'social-icon')

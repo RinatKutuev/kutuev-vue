@@ -10,10 +10,14 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 330px;
+    width: 380px;
     transition: all ease .3s;
     transform: translate(100%, 0);
     display: none;
+
+    &.active{
+        transform: translate(0, 0);
+    }
 
     @include tablets(){
         display: flex;
@@ -41,11 +45,11 @@
 .mobile-menu__close{
     display: block;
     position: absolute;
-    right: 50px;
-    top: 65px;
+    right: 40px;
+    top: 60px;
     width: 25px;
     height: 25px;
-    background: svg-load('cross.svg', fill=#464E62, width=20px, height=20px) no-repeat center
+    background: svg-load('cross.svg', fill=#464E62, width=20px, height=20px) no-repeat center;
 }
 
 .menu-btn{
@@ -56,6 +60,9 @@
         display: block;
         width: 33px;
         height: 28px;
-        background: svg-load('menu.svg', fill=#464E62, width=30px, height=25px) no-repeat center
+        background: svg-load('menu.svg', fill=#464E62, width=30px, height=25px) no-repeat center;
+        position: absolute;
+        right: 34px;
+        top: 60px
     }
 }
