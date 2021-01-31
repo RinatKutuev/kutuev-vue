@@ -20,3 +20,20 @@ defaultView.story = {
     ],
   },
 };
+
+
+export const interactivView = () => ({
+  components: { tag },
+  template: `
+    <tag title="tag" interactive />
+  `
+});
+
+interactivView.story = {
+  name: "С контролом",
+  parameters: {
+    backgrounds: [
+      { name: 'grey', value: '#8395a7', default: true },
+    ],
+  },
+};

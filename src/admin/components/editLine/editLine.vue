@@ -16,6 +16,8 @@
           @keydown.native.enter="onApprove"
           autofocus="autofocus"
           no-side-paddings="no-side-paddings"
+          v-model="groupTitle"
+          :errorMessage="validation.firstError('groupTitle')"
         ></app-input>
       </div>
       <div class="buttons">
@@ -31,6 +33,7 @@
 </template>
 
 <script>
+import {Validator, mixin} from 'simple-vue-validator';
 export default {
   props: {
     value: {
@@ -41,27 +44,41 @@ export default {
       type: String,
       default: ""
     },
+    editModeByDefault: Boolean,
     blocked: Boolean
   },
   data() {
     return {
-      editmode: false,
-      title: this.value
+      editmode: this.editModeByDefault,
+      groupTitle: this.value,
     };
   },
   methods: {
     onApprove() {
-      if (this.title.trim() === this.value.trim()) {
-        this.editmode = false;
-      } else {
-        this.$emit("approve", this.value);
-      }
+      this.$validate().then(success=>{
+          if(!success){
+              return
+          }
+         else if(this.groupTitle.trim() === this.value.trim()){
+            this.editmode = false;
+          }
+          else{
+            this.$emit("approve", this.value);
+            console.log(groupTitle, 'send')
+          }
+      })
     }
   },
   components: {
     icon: () => import("components/icon"),
     appInput: () => import("components/input")
-  }
+  },
+  validators:{
+    groupTitle: function(value){
+      return Validator.value(value).required('Введите название')
+    }
+  },
+  mixins: [mixin]
 };
 </script>
 
