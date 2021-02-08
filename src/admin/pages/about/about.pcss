@@ -1,0 +1,65 @@
+*{
+    outline: none;
+}
+.header{
+    display: flex;
+    margin-bottom: 55px
+}
+
+.title{
+    color:#414C63;
+    font-size: 21px;
+    font-weight: 700;
+    margin-right: 55px
+}
+
+.page-content{
+    padding: 55px 0 20px;
+    background: url(../../../images/admin-bg.jpg) no-repeat bottom center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item{
+    width: calc(100% / 2 - 12px);
+    margin-bottom: 25px;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    &:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #43436b;
+        border-color: #43436b transparent #43436b transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+}
+
+@keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.preloader{
+    display: flex;
+    justify-content: center;
+    height:500px;
+    align-items: center
+}

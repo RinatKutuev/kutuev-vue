@@ -30,3 +30,19 @@
     width: calc(100% / 2 - 12px);
     margin-bottom: 25px;
 }
+
+.notify-container{
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    &.active{
+        .notification{
+            transform: translate(0,-100%)
+        }
+    }
+    .notification{
+        transition: all ease .3s
+    }
+}

@@ -56,15 +56,12 @@ export default {
   methods: {
     onApprove() {
       this.$validate().then(success=>{
-          if(!success){
+          if(success == false){
               return
           }
-         else if(this.groupTitle.trim() === this.value.trim()){
+          else if(this.groupTitle.trim() === this.value.trim()){
             this.editmode = false;
-          }
-          else{
             this.$emit("approve", this.value);
-            console.log(groupTitle, 'send')
           }
       })
     }

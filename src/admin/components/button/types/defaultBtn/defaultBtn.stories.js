@@ -60,4 +60,3 @@ fileView.story = {
   name: "Тип - файл",
 };
 
-

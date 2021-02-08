@@ -3,20 +3,20 @@
         <div class="title">
             <app-input
             placeholder="Новый навык"
-            v-model="skillData.skill"
-            :errorMessage="validation.firstError('skillData.skill')"
+            v-model="skill.title"
+            :errorMessage="validation.firstError('skill.title')"
             />
         </div>
         <div class="percent">
             <app-input placeholder="100"
             type="number"
             min="0" max="100" maxlength="3"
-            v-model="skillData.percent"
-            :errorMessage="validation.firstError('skillData.percent')"
+            v-model="skill.percent"
+            :errorMessage="validation.firstError('skill.percent')"
             />
         </div>
         <div class="btn">
-            <round-button title="+" @click="sendSkill()" />
+            <round-button title="+" @click="handleClick()" />
         </div>
     </div>
 </template>
@@ -32,8 +32,8 @@ export default {
     },
     data(){
         return{
-            skillData:{
-               skill: "",
+            skill: {
+               title: "",
                percent: "" 
             }
         }
@@ -43,22 +43,29 @@ export default {
         roundButton: button
     },
     methods:{
-        sendSkill(){
-            this.$validate().then(success=>{
-                if(!success){
-                    return
-                }else{
-                    console.log(this.skillData, 'send')
-                }
-            })
-        }
+        async handleClick(){
+            if(await this.$validate() === false) return
+            this.$emit("approve", this.skill)
+        },
+        // handleClick(){
+        //     this.$validate().then(success=>{
+        //         if(success == false){
+        //             return
+        //         }else{
+        //             this.$emit("approve", this.skill)
+        //         }
+        //     })
+        // }
     },
     validators:{
-        'skillData.skill': function(value){
+        'skill.title': function(value){
             return Validator.value(value).required('Введите скилл')
         },
-        'skillData.percent': function(value){
-            return Validator.value(value).required('Введите проценты')
+        'skill.percent': function(value){
+            return Validator.value(value)
+            .required('Введите проценты')
+            .integer('Должно быть числом')
+            .between(0, 100, "Некорректное значение")
         }
     },
     mixins: [mixin]

@@ -25,6 +25,13 @@
     user-select: none;
   }
 
+  &:disabled{
+    opacity: .5;
+    filter: grayscale(100%);
+    user-select: none;
+    cursor: default
+  }
+
   &.plain {
     text-transform: initial;
     color: $links-color;
