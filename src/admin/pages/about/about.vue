@@ -189,3 +189,4 @@
 </script>
 
 <style lang="postcss" scoped src="./about.pcss"></style>
+<style lang="postcss" scoped src="../../app.pcss"></style>

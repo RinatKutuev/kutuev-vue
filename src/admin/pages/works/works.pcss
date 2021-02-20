@@ -1,0 +1,22 @@
+.works{
+    display: flex;
+    column-gap: 28px;
+    margin: 25px 0;
+}
+
+.works-adder{
+    width: calc(100% / 3);
+    box-shadow: 0 0 20px rgba(95, 95, 95, 0.1);
+}
+
+.work{
+    width: calc(100% / 3);
+    box-shadow: 0 0 20px rgba(95, 95, 95, 0.1);
+    transition: all ease .3s;
+    &:hover{
+        box-shadow: 10px 10px 30px rgba(95, 95, 95, 0.1);
+        .work-tags{
+            opacity: 1;
+        }
+    }
+}

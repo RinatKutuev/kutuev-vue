@@ -5,7 +5,11 @@ export default{
     },
     mutations:{
         SET_CATEGORIES: (state, categories) => (state.data = categories),
-        ADD_CATEGORY: (state, category) => state.data.unshift(category),
+        ADD_CATEGORY: (state, category) => {
+            category.skills = []
+            state.data.unshift(category)
+
+        },
         EDIT_CATEGORY: (state, payload) => {
             state.data = state.data.map(item => {
                 if (item.id === payload.id) {
@@ -25,7 +29,7 @@ export default{
         ADD_SKILL:(state, newSkill) => {
           state.data = state.data.map(category => {
               if(category.id === newSkill.category){
-                  category.skills.push(newSkill)
+                category.skills.push(newSkill)
               }
               return category
           })

@@ -30,8 +30,8 @@ export default {
     typeAttr: {
       type: String,
       default: "button",
-      validator: value => ["button", "file"].includes(value),
-      validator: value => ["button", "submit"].includes(value)
+      //validator: value => ["button", "file"].includes(value),
+     // validator: value => ["button", "submit"].includes(value)
     }
   }
 };
